@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebApi_Tasks.Models.TasksTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dashboard</h2>
+
+
+
+
+<p>
+    @*@Html.ActionLink("ADD", "Create", new { @class = "btn btn - primary" })*@
+
+    @Html.ActionLink("Create", "Create", FormMethod.Post, new { @class = "btn btn-primary btn-large" })
+
+</p>
+<table class="table  table-hover table-striped" id="MyTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Task_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Completion_Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Task_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Completion_Status)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "Edit", new { id = item.Task_ID }, new { @class = "btn btn-warning btn-large" }) |
+                @Html.ActionLink("Detailed Information", "Details", new { id = item.Task_ID }, new { @class = "btn btn-success btn-large" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Task_ID } , new { @class = "btn btn-danger btn-large" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TasksModelStoreContainer" CdmEntityContainer="TasksEntities">
+    <EntitySetMapping Name="TasksTables">
+      <EntityTypeMapping TypeName="TasksModel.TasksTable">
+        <MappingFragment StoreEntitySet="TasksTable">
+          <ScalarProperty Name="Task_ID" ColumnName="Task_ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Completion_Status" ColumnName="Completion_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
